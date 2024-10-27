@@ -36,7 +36,7 @@ export default function Signup() {
             <h1 className="text-white text-3xl mb-3">Welcome</h1>
             <div>
               <p className="text-white">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suspendisse aliquam varius rutrum purus maecenas ac{' '}
+                This is a Natural Disaster Alert System which warns the user when a Natural Disaster is about to occur within 6 days. The system also assists the user with information on how to best prepare given the severity of the situation.{' '}
                 <br></br>
                 <a href="#" className="flex text-white justify-center hover:text-purple-500 font-semibold">Learn more</a>
               </p>
