@@ -2,7 +2,7 @@
 import google.generativeai as genai
 import csv
 
-API_KEY = 'AIzaSyAfDcO623oPWtrzAvnSdRqded4rz8weCJk'
+API_KEY = 'API KEY'
 genai.configure(api_key=API_KEY)
 
 generation_config = {
