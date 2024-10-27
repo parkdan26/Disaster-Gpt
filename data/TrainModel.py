@@ -57,7 +57,7 @@ while nextline:
             filename = "Result.csv"
             location = old_coor[1].strip()
             location = location[0: len(location) - 1]
-            f2.write(str(response) + "\t" + location + "\n")
+            f2.write(str(response) + "+" + location + "\n")
 
     nextline = f.readline()
 
