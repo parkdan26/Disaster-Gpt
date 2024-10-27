@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const fs = require("fs");
 const app = express();
 
 // Middleware to parse JSON and URL-encoded data
@@ -15,9 +15,19 @@ app.use(cors(corsOptions));
 
 // POST request handler
 app.post("/info", (req, res) => {
-    console.log('POST parameters received are:', req.body);
-    res.status(200).send("Data received successfully");
-});
+    try{
+        console.log('POST parameters received are:', req.body);
+        let data = JSON.stringify(req.body, null, 2);
+        fs.appendFile('./file.txt', data, (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+        res.status(200).send("Data Recieved");
+    } catch (error) {
+        console.error('Error handling POST request:', error);
+        res.status(500).send("Internal Server Error");
+    }
+    }); 
 
 // Serve an HTML file if needed (optional)
 app.get('/', (req, res) => {
