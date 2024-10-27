@@ -1,5 +1,5 @@
 import requests
-from Apikey import Key
+from ApiKey import Key
 
 class Weather:
     url = f"https://api.tomorrow.io/v4/timelines?apikey={Key.weather_k}"
