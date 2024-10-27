@@ -45,8 +45,8 @@ f2 = open("Result.csv", "w")
 
 while nextline:
     if nextline.__contains__("Location"):
-        coor = nextline.strip().split(":")
-        iso = to_iso(coor).strip().split(",")
+        old_coor = nextline.strip().split(":")
+        iso = to_iso(old_coor).strip().split(",")
         coor = [float(iso[0]), float(iso[1])]
         weather = Weather()
         weather.set(coor,"now", "nowPlus5d")
@@ -55,10 +55,10 @@ while nextline:
         response = ai()
         if response[0].strip().lower() == 'yes':
             filename = "Result.csv"
-            f2.write(str(response) + "\n")
+            location = old_coor[1].strip()
+            location = location[0: len(location) - 1]
+            f2.write(str(response) + "\t" + location + "\n")
 
     nextline = f.readline()
 
 f2.close()
-
-
